@@ -72,7 +72,8 @@ def edit(request):
             user = User.objects.get(id=values)
             user.is_active = False
             user.save()
-            auth.logout((request))
+            if request.user.username == user.username:
+                auth.logout((request))
         return redirect('loginPage')
     elif request.method == 'POST' and 'unblock' in request.POST:
         ID = request.POST.getlist('ID')
