@@ -1,1 +1,1 @@
-web: gunicorn djangoProject.wsgi --log-file -
+web: gunicorn task3-andrey-zhuk.wsgi --log-file -
