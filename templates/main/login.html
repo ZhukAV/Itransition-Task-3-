@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 contents">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h3>Sign In</h3>
+                            <p class="mb-4">Welcome back!</p>
+                        </div>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="form-group first">
+                                <label for="username">Username</label>
+                                <i class="fa fa-user fa-lg me-3 fa-fw"></i>
+                                <input type="text" class="form-control" name="username" pwa2-uuid="EDITOR/input-FFD-D4B-657A2-8EB" pwa-fake-editor="">
+                            </div>
+                            <div class="form-group last mb-4">
+                                <label for="password">Password</label>
+                                <i class="fa fa-key fa-lg me-3 fa-fw"></i>
+                                <input type="password" class="form-control" name="password">
+                            </div>
+                            <input type="Submit" value="Sign In" class="btn btn-block btn-primary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
