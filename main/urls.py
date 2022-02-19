@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 from django.views.static import serve
 from django.conf import settings
-from django.conf.urls import url
+
 
 urlpatterns = [
     path('', views.loginPage, name = 'loginPage'),
@@ -10,6 +10,6 @@ urlpatterns = [
     path('logout',views.logout, name = "logout"),
     path('main',views.mainPage, name = 'mainPage'),
     path('edit',views.edit, name = 'edit'),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}),
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})
 ]
